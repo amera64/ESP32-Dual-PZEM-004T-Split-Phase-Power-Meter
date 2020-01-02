@@ -33,13 +33,13 @@ float Energy;
 
 
 //PZEM004T pzem(10, 11);
-PZEM004T pzem(&Serial2);
+PZEM004T pzem(&Serial2); //ESP32 rx(D16) tx(D17)
 IPAddress ip[2];
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 long lastMsg = 0;
-char msg[50];
+char msg[50]; // One PZEM-004T set to 192.168.1.1 & other set to 192.168.1.2, one for each phase
 int value = 0;
 
 
